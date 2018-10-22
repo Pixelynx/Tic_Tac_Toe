@@ -1,16 +1,16 @@
 class Board {
   constructor() {
     this.grid = [
-      [' ', ' ', ' '],
-      [' ', ' ', ' '],
-      [' ', ' ', ' ']
+      ['| ', '', '  |'],
+      ['| ', '', '  |'],
+      ['| ', '', '  |']
     ];
   };
 
 // Sets new cleared board
 
 printLine() {
-  console.log("+-----------+");
+  console.log("+---+---+---+");
 }
 
 printRow(row) {
