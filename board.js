@@ -14,7 +14,6 @@ printLine() {
 }
 
 printRow(row) {
-  this.row = row;
   console.log(row.join("  | "));
 }
 
