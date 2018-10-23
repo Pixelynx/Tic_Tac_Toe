@@ -4,7 +4,7 @@ Player = require('./player.js')
 const readlineSync = require('readline-sync');
 
 class Game {
-  constructor(player1, player2) {
+  constructor(player1 = 'x', player2 = ) {
     this.player1 = player1;
     this.player2 = player2;
     this.board = new Board();
@@ -40,7 +40,7 @@ let printBoard = new Board();
 
 printBoard.setBoard();
 moved.playerMove();
-updated.updateBoard(' x ');
+updated.updateBoard();
 
 
 module.exports = Game;

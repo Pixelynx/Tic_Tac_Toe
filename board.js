@@ -41,9 +41,9 @@ setBoard() {
 // Updates board when move is made
 // if choice is isValidMove; change value on board to x/o
 updateBoard(symbol, currPlayer) {
+  symbol = this.playerSymbol.symbol
 
-
-  this.grid[0][1] = symbol
+  this.grid[0][1] = symbol;
   // if (currPlayer === this.player1) {
   //   this.grid[0][1] = this.grid.symbol;
   //   currPlayer = this.player2;
