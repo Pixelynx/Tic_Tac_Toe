@@ -1,5 +1,7 @@
 Board = require('./board.js');
-// Player = require('./player.js')
+Player = require('./player.js')
+
+const readlineSync = require('readline-sync');
 
 class Game {
   constructor(player1, player2) {
@@ -9,46 +11,36 @@ class Game {
     this.currPlayer = player1;
   }
 
-  startGame() {
-
-
-      // need player's choice to convert to board selection
-      // if player chooses 'A1' ==> '|A1'
-      // user input: 'A1' = board.grid[0][0], 'A2' = board.grid[0][1]
+  playGame() {
 
       let selections = {
-        'A1': this.board.grid[0][0], 'B1': this.board.grid[1][0], 'C1': this.board.grid[2][0],
-        'A2': this.board.grid[0][1], 'B2': this.board.grid[1][1], 'C2': this.board.grid[2][1],
-        'A3': this.board.grid[0][2], 'B3': this.board.grid[1][2], 'C3': this.board.grid[2][2],
+        'a': this.board.grid[0][1], 'b': this.board.grid[0][2], 'c': this.board.grid[0][3],
+        'd': this.board.grid[1][1], 'e': this.board.grid[1][2], 'f': this.board.grid[1][3],
+        'g': this.board.grid[2][1], 'h': this.board.grid[2][2], 'i': this.board.grid[2][3],
         };
       return selections
 }
 
-getMove(x, o) {
-  if (this.currPlayer === 'player1') {
-    this.board.grid[0][1] = 'x';
-  } else {
-    this.board.grid[0][1] = '| o';
-  }
-  return this.board.setBoard();
+playerMove(userInput) {
+  this.userInput = readlineSync.question('Please pick a row and column.');
+  return this.userInput ;
 }
 
-updateBoard() {
-  // if choice is isValidMove; change value on board to x/o
+};
 
-  // if () {
-  //   this.board.grid[0][0] = choice;
-  // } else {
-  //   console.log('whoops')
-  // }
-}
 
-}
+// let play = new Game(this.player1, this.player2);
+let moved = new Game();
 
-let gameStart = new Game();
-let updated = new Game();
-gameStart.startGame();
-// updated.getMove();
+let updated = new Board();
+let printBoard = new Board();
+
+// play.playGame();
+
+
+printBoard.setBoard();
+moved.playerMove();
+updated.updateBoard(' x ');
 
 
 module.exports = Game;

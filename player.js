@@ -1,24 +1,16 @@
 Board = require('./board.js');
 Game = require('./game.js')
 
-const readlineSync = require('readline-sync');
-let choice = readlineSync.question('Please pick a row and column.');
-
 class Player {
-  constructor(symbol, name) {
+  constructor(symbol) {
     this.symbol = symbol;
-    this.name = name
-
+    // this.name = name
   };
-
-  getMove() {
-    console.log(`Omg. ${choice} logged! It's a miracle!`);
-
-  }
 }
 
-let moved = new Player();
-moved.getMove();
+
+let playerSymbol = new Player(' x ');
+playerSymbol.symbol;
 
 
 module.exports = Player;
